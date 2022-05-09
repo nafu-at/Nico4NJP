@@ -1,6 +1,6 @@
 name: "Nico4NJP"
-version: @version@
-authors: [NAFU_at]
+version: ${version}
+authors: [ NAFU_at ]
 website: "https://nafuchoco.page/"
 main: "page.nafuchoco.neojukepro.nico4njp.Nico4NJP"
-requiredVersion: 1.5.0
+requiredVersion: 2.0.0
