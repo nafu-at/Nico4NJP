@@ -3,4 +3,4 @@ version: ${version}
 authors: [ NAFU_at ]
 website: "https://nafuchoco.page/"
 main: "page.nafuchoco.neojukepro.nico4njp.Nico4NJP"
-requiredVersion: 2.0.0
+dependency: [ NeoJukePro ]

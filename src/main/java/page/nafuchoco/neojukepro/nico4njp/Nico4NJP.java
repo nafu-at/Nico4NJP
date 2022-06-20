@@ -16,8 +16,9 @@
 
 package page.nafuchoco.neojukepro.nico4njp;
 
-import page.nafuchoco.neojukepro.core.Main;
-import page.nafuchoco.neojukepro.core.module.NeoModule;
+import page.nafuchoco.neobot.api.NeoBot;
+import page.nafuchoco.neobot.api.module.NeoModule;
+import page.nafuchoco.neojukepro.module.NeoJuke;
 import page.nafuchoco.neojukepro.source.NicoAudioSourceManager;
 
 public class Nico4NJP extends NeoModule {
@@ -26,12 +27,15 @@ public class Nico4NJP extends NeoModule {
 
     public static Nico4NJP getInstance() {
         if (instance == null)
-            instance = (Nico4NJP) Main.getLauncher().getModuleManager().getModule("Nico4NJP");
+            instance = (Nico4NJP) NeoBot.getModuleManager().getModule("Nico4NJP");
         return instance;
     }
 
     @Override
     public void onLoad() {
-        registerAudioSourceManager(new NicoAudioSourceManager());
+        NeoJuke neoJuke = (NeoJuke) NeoBot.getModuleManager().getModule("NeoJukePro");
+        if (neoJuke != null) {
+            neoJuke.getCustomSourceRegistry().registerCustomAudioSource(new NicoAudioSourceManager(), this);
+        }
     }
 }

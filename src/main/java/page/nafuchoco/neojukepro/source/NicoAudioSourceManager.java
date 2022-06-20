@@ -149,8 +149,8 @@ public class NicoAudioSourceManager implements CustomAudioSourceManager, HttpCon
         //MessageEmbed.Field source = new MessageEmbed.Field("",
         //        "Loaded from " + guildAudioPlayer.getNowPlaying().getTrack().getSourceManager().getSourceName() + ".", false);
         //builder.addField(source);
-        builder.setFooter(MessageUtil.format(MessageManager.getMessage("command.nowplay.request"), audioPlayer.getPlayingTrack().getInvoker().getJDAMember().getEffectiveName()),
-                audioPlayer.getPlayingTrack().getInvoker().getJDAMember().getUser().getAvatarUrl());
+        builder.setFooter(MessageUtil.format(MessageManager.getMessage("command.nowplay.request"), audioPlayer.getPlayingTrack().getInvoker().getEffectiveName()),
+                audioPlayer.getPlayingTrack().getInvoker().getUser().getAvatarUrl());
         return builder.build();
     }
 
